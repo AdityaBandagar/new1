@@ -1,16 +1,14 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Aditya Bandagar | Portfolio</title>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Aditya Bandagar Portfolio</title>
 
 <style>
+
+/* RESET */
 
 *{
 margin:0;
@@ -19,27 +17,47 @@ box-sizing:border-box;
 font-family:Segoe UI;
 }
 
+/* ANIMATED BACKGROUND */
+
 body{
-background:#0f172a;
+height:100vh;
+background:#020617;
 color:white;
+cursor:none;
 overflow-x:hidden;
 }
 
-/* PARTICLES BACKGROUND */
-
-#particles-js{
+body::before{
+content:"";
 position:fixed;
-width:100%;
-height:100%;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+background:conic-gradient(
+#00ffff,
+#00aaff,
+#0044ff,
+#0011aa,
+#00ffff
+);
+animation:spin 18s linear infinite;
 z-index:-1;
+filter:blur(140px);
+opacity:0.7;
 }
 
-/* CUSTOM CURSOR */
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* CURSOR */
 
 .cursor{
-width:15px;
-height:15px;
-border:2px solid #38bdf8;
+width:18px;
+height:18px;
+border:2px solid cyan;
 border-radius:50%;
 position:fixed;
 pointer-events:none;
@@ -50,29 +68,14 @@ pointer-events:none;
 nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 8%;
-background:rgba(0,0,0,0.6);
+background:#020617;
 }
 
 .logo{
 color:#38bdf8;
 font-size:22px;
 font-weight:bold;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-}
-
-nav ul li{
-margin-left:20px;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
 }
 
 /* HERO */
@@ -84,72 +87,104 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+animation:fade 2s;
 }
 
-.hero img{
-width:150px;
-height:150px;
+.profile{
+width:160px;
+height:160px;
 border-radius:50%;
-border:4px solid #38bdf8;
-margin-bottom:10px;
+border:3px solid #38bdf8;
+margin-bottom:20px;
+animation:float 4s infinite;
 }
 
 .hero h1{
 font-size:42px;
 }
 
-.hero span{
-color:#38bdf8;
-}
-
-.typing{
-color:#94a3b8;
-}
-
 /* SECTION */
 
-.card{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:15px;
-margin:60px auto;
-max-width:900px;
-backdrop-filter:blur(10px);
+.section{
+padding:80px 8%;
+animation:fade 2s;
+}
+
+h2{
+text-align:center;
+color:#38bdf8;
+margin-bottom:30px;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+margin:auto;
+text-align:center;
+line-height:1.8;
 }
 
 /* SKILLS */
 
 .skills{
 display:flex;
-flex-wrap:wrap;
-gap:15px;
 justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .skill{
 background:#1e293b;
-padding:10px 20px;
+padding:12px 22px;
 border-radius:20px;
+transition:0.3s;
 }
 
-/* PROJECT SLIDER */
+.skill:hover{
+transform:scale(1.1);
+background:#38bdf8;
+color:black;
+}
+
+/* BMW SLIDER */
 
 .slider{
-position:relative;
-max-width:700px;
-margin:auto;
+text-align:center;
 }
 
-.slide{
-display:none;
+.slider img{
+width:500px;
+border-radius:12px;
 }
 
-.slide img{
-width:100%;
+/* PROJECT CARDS */
+
+.projects{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.card{
+width:200px;
+height:140px;
+background:#1e293b;
 border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:0.4s;
 }
 
-/* CHATBOT */
+.card:hover{
+transform:rotateY(15deg) rotateX(10deg) scale(1.1);
+background:#38bdf8;
+color:black;
+}
+
+/* CHATBOX */
 
 .chat-btn{
 position:fixed;
@@ -179,7 +214,7 @@ color:black;
 }
 
 .chat-body{
-height:200px;
+height:180px;
 overflow:auto;
 padding:10px;
 }
@@ -200,67 +235,74 @@ border:none;
 padding:8px;
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:20px;
 background:#020617;
+margin-top:40px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+0%{opacity:0;}
+100%{opacity:1;}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-
 <div class="cursor" id="cursor"></div>
 
-<!-- NAVBAR -->
-
 <nav>
-
 <div class="logo">Aditya</div>
-
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-</ul>
-
 </nav>
 
 <!-- HERO -->
 
 <div class="hero">
 
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<div class="profile"></div>
 
-<h1>Hello I'm <span>Aditya</span></h1>
+<h1>Aditya Bandagar</h1>
 
-<p class="typing"></p>
+<p>Computer Engineering Student</p>
 
 </div>
 
 <!-- ABOUT -->
 
-<div class="card" id="about">
+<div class="section">
 
-<h2 style="text-align:center;color:#38bdf8">About Me</h2>
+<h2>About Me</h2>
 
-<p style="text-align:center">
-Aditya Bandagar <br>
-Computer Engineering Student <br>
-Satara Polytechnic Satara
+<p class="about">
+
+Hello 👋 I'm Aditya Bandagar from Satara Polytechnic.
+I enjoy programming, web development and modern technology.
+
+My goal is to become a professional software developer
+and create modern applications and websites.
+
 </p>
 
 </div>
 
 <!-- SKILLS -->
 
-<div class="card" id="skills">
+<div class="section">
 
-<h2 style="text-align:center;color:#38bdf8">Skills</h2>
+<h2>Skills</h2>
 
 <div class="skills">
 
@@ -274,25 +316,31 @@ Satara Polytechnic Satara
 
 </div>
 
-<!-- PROJECT SLIDER BMW -->
+<!-- BMW SLIDER -->
 
-<div class="card" id="projects">
+<div class="section">
 
-<h2 style="text-align:center;color:#38bdf8">BMW Gallery</h2>
+<h2>BMW Car Collection</h2>
 
 <div class="slider">
 
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<img id="car">
+
 </div>
 
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
 </div>
 
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-</div>
+<!-- PROJECTS -->
+
+<div class="section">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="card">Portfolio</div>
+<div class="card">BMW Gallery</div>
+<div class="card">Web Design</div>
 
 </div>
 
@@ -304,7 +352,7 @@ Satara Polytechnic Satara
 
 </footer>
 
-<!-- CHATBOT -->
+<!-- CHAT -->
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
 
@@ -326,80 +374,40 @@ Satara Polytechnic Satara
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
 <script>
-
-/* PARTICLES */
-
-particlesJS("particles-js",{
-particles:{
-number:{value:80},
-size:{value:3},
-color:{value:"#38bdf8"},
-line_linked:{enable:true}
-}
-});
-
-/* TYPING */
-
-const text="Web Developer | Programmer | Student";
-
-let i=0;
-
-function typing(){
-
-if(i<text.length){
-
-document.querySelector(".typing").innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(typing,80);
-
-}
-
-}
-
-typing();
 
 /* CURSOR */
 
 const cursor=document.getElementById("cursor");
 
 document.addEventListener("mousemove",(e)=>{
-
 cursor.style.top=e.clientY+"px";
-
 cursor.style.left=e.clientX+"px";
-
 });
 
-/* SLIDER */
+/* BMW SLIDER */
 
-let slides=document.getElementsByClassName("slide");
+const cars=[
+"https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+"https://images.unsplash.com/photo-1493238792000-8113da705763",
+"https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
+];
 
 let index=0;
 
-function showSlides(){
+function changeCar(){
 
-for(let i=0;i<slides.length;i++){
-
-slides[i].style.display="none";
-
-}
+document.getElementById("car").src=cars[index];
 
 index++;
 
-if(index>slides.length){index=1}
-
-slides[index-1].style.display="block";
-
-setTimeout(showSlides,3000);
+if(index>=cars.length){index=0;}
 
 }
 
-showSlides();
+setInterval(changeCar,3000);
+
+changeCar();
 
 /* CHAT */
 
@@ -427,4 +435,4 @@ body.innerHTML+="<p>Bot: Nice 👍</p>";
 
 </body>
 </html>
-
+```
