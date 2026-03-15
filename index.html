@@ -1,12 +1,14 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Aditya Bandagar | Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -14,276 +16,332 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
-}
-
-html{
-scroll-behavior:smooth;
+font-family:Segoe UI;
 }
 
 body{
+background:#0f172a;
 color:white;
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1a2a3a);
-background-size:400% 400%;
-animation:bgMove 12s infinite linear;
+overflow-x:hidden;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
+/* PARTICLES BACKGROUND */
 
-#progress{
+#particles-js{
 position:fixed;
-top:0;
-left:0;
-height:5px;
-background:#00f2fe;
-width:0%;
-z-index:9999;
+width:100%;
+height:100%;
+z-index:-1;
 }
+
+/* CUSTOM CURSOR */
+
+.cursor{
+width:15px;
+height:15px;
+border:2px solid #38bdf8;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+}
+
+/* NAVBAR */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:#000;
-padding:12px;
-z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.6);
+}
+
+.logo{
+color:#38bdf8;
+font-size:22px;
+font-weight:bold;
 }
 
 nav ul{
 display:flex;
-justify-content:center;
 list-style:none;
 }
 
-nav li{
-margin:0 15px;
+nav ul li{
+margin-left:20px;
 }
 
-nav a{
+nav ul li a{
 color:white;
 text-decoration:none;
-font-weight:bold;
 }
 
-nav a:hover{
-color:#00f2fe;
-}
+/* HERO */
 
-header{
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:110px 20px 60px;
 }
 
-.profile{
-width:170px;
-height:170px;
+.hero img{
+width:150px;
+height:150px;
 border-radius:50%;
-border:4px solid #00f2fe;
-box-shadow:0 0 25px #00f2fe;
-object-fit:cover;
-animation:float 4s infinite ease-in-out;
+border:4px solid #38bdf8;
+margin-bottom:10px;
 }
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
+.hero h1{
+font-size:42px;
+}
+
+.hero span{
+color:#38bdf8;
 }
 
 .typing{
-color:#00f2fe;
-margin-top:10px;
-font-size:18px;
+color:#94a3b8;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
+/* SECTION */
 
 .card{
-background:rgba(255,255,255,0.08);
-padding:25px;
-margin:25px 0;
+background:rgba(255,255,255,0.05);
+padding:40px;
 border-radius:15px;
-transition:0.4s;
+margin:60px auto;
+max-width:900px;
+backdrop-filter:blur(10px);
 }
 
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-background:rgba(255,255,255,0.15);
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
-.skills span{
-display:inline-block;
-background:#00f2fe;
-color:black;
-padding:7px 14px;
-border-radius:20px;
-margin:6px;
-font-size:14px;
-font-weight:bold;
-}
-
-input,textarea{
-width:100%;
-padding:10px;
-margin:8px 0;
-border:none;
-border-radius:6px;
-}
-
-button{
+.skill{
+background:#1e293b;
 padding:10px 20px;
-border:none;
-background:#00f2fe;
-color:black;
-font-weight:bold;
-border-radius:6px;
-cursor:pointer;
-transition:0.3s;
+border-radius:20px;
 }
 
-button:hover{
-transform:scale(1.05);
+/* PROJECT SLIDER */
+
+.slider{
+position:relative;
+max-width:700px;
+margin:auto;
+}
+
+.slide{
+display:none;
+}
+
+.slide img{
+width:100%;
+border-radius:10px;
+}
+
+/* CHATBOT */
+
+.chat-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#38bdf8;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.chatbox{
+position:fixed;
+bottom:80px;
+right:20px;
+width:300px;
+background:#020617;
+border-radius:10px;
+display:none;
+flex-direction:column;
+}
+
+.chat-header{
+background:#38bdf8;
+padding:10px;
+color:black;
+}
+
+.chat-body{
+height:200px;
+overflow:auto;
+padding:10px;
+}
+
+.chat-input{
+display:flex;
+}
+
+.chat-input input{
+flex:1;
+padding:8px;
+border:none;
+}
+
+.chat-input button{
+background:#38bdf8;
+border:none;
+padding:8px;
 }
 
 footer{
 text-align:center;
 padding:20px;
-margin-top:40px;
-background:rgba(0,0,0,0.4);
+background:#020617;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-<div id="progress"></div>
+<div id="particles-js"></div>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAVBAR -->
 
 <nav>
+
+<div class="logo">Aditya</div>
+
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
+<!-- HERO -->
 
-<header>
+<div class="hero">
 
-<img src="bmw.jpg" class="profile">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
 
-<h1>Aditya Bandagar</h1>
+<h1>Hello I'm <span>Aditya</span></h1>
 
 <p class="typing"></p>
 
-<p>Satara Polytechnic Satara</p>
+</div>
 
-</header>
-
-
-<div class="container">
-
+<!-- ABOUT -->
 
 <div class="card" id="about">
 
-<h2>About Me</h2>
+<h2 style="text-align:center;color:#38bdf8">About Me</h2>
 
-<p>
-Hello 👋 I'm Aditya Bandagar, a Computer Engineering student.
-I enjoy coding, building websites and learning new technologies.
-My goal is to become a professional software developer.
+<p style="text-align:center">
+Aditya Bandagar <br>
+Computer Engineering Student <br>
+Satara Polytechnic Satara
 </p>
 
 </div>
 
+<!-- SKILLS -->
 
 <div class="card" id="skills">
 
-<h2>Skills</h2>
+<h2 style="text-align:center;color:#38bdf8">Skills</h2>
 
 <div class="skills">
 
-<span>C Programming</span>
-<span>C++</span>
-<span>HTML</span>
-<span>Java</span>
-<span>Web Design</span>
+<div class="skill">C</div>
+<div class="skill">C++</div>
+<div class="skill">HTML</div>
+<div class="skill">Java</div>
+<div class="skill">Web Design</div>
 
 </div>
 
 </div>
 
+<!-- PROJECT SLIDER BMW -->
 
 <div class="card" id="projects">
 
-<h2>Projects</h2>
+<h2 style="text-align:center;color:#38bdf8">BMW Gallery</h2>
 
-<p><b>Portfolio Website</b></p>
+<div class="slider">
 
-<p>Personal website created using HTML and CSS.</p>
-
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
 </div>
 
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
+</div>
 
-<div class="card" id="contact">
-
-<h2>Contact Me</h2>
-
-<form onsubmit="showThanks(event)">
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<textarea placeholder="Your Message"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-<div id="thanks" style="display:none;margin-top:15px">
-
-<h3>✔ Message Sent Successfully</h3>
-
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
 </div>
 
 </div>
 
-
 </div>
-
 
 <footer>
 
-<p>© 2026 Aditya Bandagar | Portfolio</p>
+<p>© 2026 Aditya Bandagar</p>
 
 </footer>
 
+<!-- CHATBOT -->
+
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<div class="chatbox" id="chat">
+
+<div class="chat-header">AI Chat</div>
+
+<div class="chat-body" id="chatBody">
+<p>Hello 👋</p>
+</div>
+
+<div class="chat-input">
+
+<input id="msg">
+
+<button onclick="send()">Send</button>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
 
-window.onscroll=function(){
+/* PARTICLES */
 
-let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+particlesJS("particles-js",{
+particles:{
+number:{value:80},
+size:{value:3},
+color:{value:"#38bdf8"},
+line_linked:{enable:true}
+}
+});
 
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-let scrolled=(winScroll/height)*100;
-
-document.getElementById("progress").style.width=scrolled+"%";
-
-};
+/* TYPING */
 
 const text="Web Developer | Programmer | Student";
 
@@ -305,17 +363,68 @@ setTimeout(typing,80);
 
 typing();
 
-function showThanks(e){
+/* CURSOR */
 
-e.preventDefault();
+const cursor=document.getElementById("cursor");
 
-document.getElementById("thanks").style.display="block";
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.top=e.clientY+"px";
+
+cursor.style.left=e.clientX+"px";
+
+});
+
+/* SLIDER */
+
+let slides=document.getElementsByClassName("slide");
+
+let index=0;
+
+function showSlides(){
+
+for(let i=0;i<slides.length;i++){
+
+slides[i].style.display="none";
+
+}
+
+index++;
+
+if(index>slides.length){index=1}
+
+slides[index-1].style.display="block";
+
+setTimeout(showSlides,3000);
+
+}
+
+showSlides();
+
+/* CHAT */
+
+function toggleChat(){
+
+let c=document.getElementById("chat");
+
+c.style.display=c.style.display==="flex"?"none":"flex";
+
+}
+
+function send(){
+
+let msg=document.getElementById("msg").value;
+
+let body=document.getElementById("chatBody");
+
+body.innerHTML+="<p>You: "+msg+"</p>";
+
+body.innerHTML+="<p>Bot: Nice 👍</p>";
 
 }
 
 </script>
 
-
 </body>
 </html>
-```
+
