@@ -32,20 +32,6 @@ animation:bgMove 12s infinite linear;
 100%{background-position:0% 50%}
 }
 
-.dark{
-background:black;
-}
-
-#progress{
-position:fixed;
-top:0;
-left:0;
-height:5px;
-background:#00f2fe;
-width:0%;
-z-index:9999;
-}
-
 nav{
 position:fixed;
 top:0;
@@ -75,6 +61,16 @@ nav a:hover{
 color:#00f2fe;
 }
 
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+background:#00f2fe;
+width:0%;
+z-index:9999;
+}
+
 header{
 text-align:center;
 padding:110px 20px 60px;
@@ -90,9 +86,9 @@ animation:float 4s infinite ease-in-out;
 }
 
 @keyframes float{
-0%{transform:translateY(0px)}
+0%{transform:translateY(0)}
 50%{transform:translateY(-10px)}
-100%{transform:translateY(0px)}
+100%{transform:translateY(0)}
 }
 
 .typing{
@@ -120,37 +116,15 @@ transform:translateY(-8px) scale(1.02);
 background:rgba(255,255,255,0.15);
 }
 
-.skills p{
-margin-top:10px;
-}
-
-.bar{
-width:100%;
-background:#444;
-height:10px;
-border-radius:5px;
-margin-bottom:10px;
-}
-
-.bar div{
-height:10px;
+.skills span{
+display:inline-block;
 background:#00f2fe;
-border-radius:5px;
-animation:grow 2s;
-}
-
-@keyframes grow{
-0%{width:0}
-}
-
-.html{width:90%;}
-.c{width:80%;}
-.java{width:70%;}
-
-.project{
-margin-top:10px;
-padding:10px;
-border-left:4px solid #00f2fe;
+color:black;
+padding:7px 14px;
+border-radius:20px;
+margin:6px;
+font-size:14px;
+font-weight:bold;
 }
 
 input,textarea{
@@ -183,9 +157,23 @@ margin-top:40px;
 background:rgba(0,0,0,0.4);
 }
 
+#thanks{
+display:none;
+text-align:center;
+padding:40px;
+background:rgba(0,0,0,0.6);
+border-radius:15px;
+margin-top:20px;
+animation:pop 0.6s;
+}
+
+@keyframes pop{
+0%{transform:scale(0.5);opacity:0}
+100%{transform:scale(1);opacity:1}
+}
+
 </style>
 </head>
-
 
 <body>
 
@@ -194,13 +182,11 @@ background:rgba(0,0,0,0.4);
 <nav>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-
 
 <header>
 
@@ -212,127 +198,83 @@ background:rgba(0,0,0,0.4);
 
 <p>Satara Polytechnic Satara</p>
 
-<br>
-
-<button onclick="darkMode()">Toggle Dark Mode</button>
-
 </header>
-
 
 <div class="container">
 
-
 <div class="card" id="about">
-
 <h2>About Me</h2>
-
 <p>
 Hello 👋 I'm Aditya Bandagar, a Computer Engineering student.
 I enjoy coding, building websites and learning new technologies.
 My goal is to become a professional software developer.
 </p>
-
 </div>
-
-
-<div class="card" id="education">
-
-<h2>Education</h2>
-
-<p><b>Diploma in Computer Engineering</b></p>
-
-<p>Satara Polytechnic Satara</p>
-
-<p>2024 - 2027</p>
-
-</div>
-
 
 <div class="card" id="skills">
-
 <h2>Skills</h2>
 
 <div class="skills">
-
-<p>HTML</p>
-<div class="bar"><div class="html"></div></div>
-
-<p>C Programming</p>
-<div class="bar"><div class="c"></div></div>
-
-<p>Java</p>
-<div class="bar"><div class="java"></div></div>
-
+<span>C Programming</span>
+<span>C++</span>
+<span>HTML</span>
+<span>Java</span>
+<span>Web Design</span>
 </div>
 
 </div>
-
 
 <div class="card" id="projects">
 
 <h2>Projects</h2>
 
-<div class="project">
-
-<b>Portfolio Website</b>
-
+<p><b>Portfolio Website</b></p>
 <p>Personal website created using HTML and CSS.</p>
 
 </div>
-
-<div class="project">
-
-<b>YouTube UI Design</b>
-
-<p>Designed YouTube interface using Figma.</p>
-
-</div>
-
-</div>
-
 
 <div class="card" id="contact">
 
 <h2>Contact Me</h2>
 
-<form action="https://formsubmit.co/adityabandagar7@gmail.com" method="POST">
+<form onsubmit="showThanks(event)">
 
-<input type="hidden" name="_captcha" value="false">
+<input type="text" placeholder="Your Name" required>
 
-<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
 
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" placeholder="Your Message"></textarea>
+<textarea placeholder="Your Message"></textarea>
 
 <button type="submit">Send Message</button>
 
 </form>
 
+<div id="thanks">
+
+<h2>✔ Message Sent Successfully</h2>
+
+<p>Thank you for contacting me.</p>
+
 </div>
 
-
 </div>
 
+</div>
 
 <footer>
 
-<p>© 2026 Aditya Bandagar | Portfolio</p>
+<p>© 2026 Aditya Bandagar</p>
 
 </footer>
 
-
-
 <script>
-
-function darkMode(){
-document.body.classList.toggle("dark");
-}
 
 window.onscroll=function(){
 
 let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+
 let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
 let scrolled=(winScroll/height)*100;
 
 document.getElementById("progress").style.width=scrolled+"%";
@@ -340,20 +282,34 @@ document.getElementById("progress").style.width=scrolled+"%";
 };
 
 const text="Web Developer | Programmer | Student";
+
 let i=0;
 
 function typing(){
+
 if(i<text.length){
+
 document.querySelector(".typing").innerHTML+=text.charAt(i);
+
 i++;
+
 setTimeout(typing,80);
+
 }
+
 }
 
 typing();
 
-</script>
+function showThanks(e){
 
+e.preventDefault();
+
+document.getElementById("thanks").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
