@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +17,26 @@ box-sizing:border-box;
 font-family:Segoe UI;
 }
 
-/* BACKGROUND ANIMATION */
+/* ANIMATED BACKGROUND */
 
 body{
-background:linear-gradient(-45deg,#0f172a,#1e293b,#020617,#334155);
-background-size:400% 400%;
-animation:bgMove 12s ease infinite;
+margin:0;
+height:100vh;
 color:white;
 cursor:none;
+background:linear-gradient(270deg,#0f172a,#1e293b,#020617,#334155,#1e293b);
+background-size:1000% 1000%;
+animation:moveBG 20s linear infinite;
 }
 
-@keyframes bgMove{
+@keyframes moveBG{
+
 0%{background-position:0% 50%;}
+
 50%{background-position:100% 50%;}
+
 100%{background-position:0% 50%;}
+
 }
 
 /* CURSOR */
@@ -84,9 +90,13 @@ font-size:42px;
 }
 
 @keyframes float{
+
 0%{transform:translateY(0)}
+
 50%{transform:translateY(-10px)}
+
 100%{transform:translateY(0)}
+
 }
 
 /* SECTIONS */
@@ -259,7 +269,7 @@ background:#020617;
 margin-top:40px;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -290,7 +300,9 @@ height:110px;
 <div class="cursor" id="cursor"></div>
 
 <nav>
+
 <div class="logo">Aditya</div>
+
 </nav>
 
 <!-- HERO -->
@@ -314,8 +326,7 @@ height:110px;
 <p class="about">
 Hello 👋 I'm Aditya Bandagar from Satara Polytechnic.
 I enjoy programming, web development and modern technology.
-My goal is to become a professional software developer and
-create modern applications and websites.
+My goal is to become a professional software developer.
 </p>
 
 </div>
@@ -355,7 +366,7 @@ create modern applications and websites.
 
 </div>
 
-<!-- BMW CAR SLIDER -->
+<!-- BMW SLIDER -->
 
 <div class="section">
 
@@ -393,7 +404,7 @@ create modern applications and websites.
 
 <div class="contact">
 
-<p></p>
+<p>📞 8080787377</p>
 <p>📧 adityabandagar7@gmail.com</p>
 
 </div>
@@ -489,4 +500,4 @@ body.innerHTML+="<p>Bot: Nice 👍</p>";
 
 </body>
 </html>
-
+```
