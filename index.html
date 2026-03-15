@@ -17,16 +17,17 @@ font-family:Arial;
 body{
 background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
 color:white;
+line-height:1.6;
 }
 
 header{
 text-align:center;
-padding:60px 20px;
+padding:70px 20px;
 }
 
 .profile{
-width:150px;
-height:150px;
+width:160px;
+height:160px;
 border-radius:50%;
 border:4px solid #00f2fe;
 object-fit:cover;
@@ -34,12 +35,13 @@ object-fit:cover;
 
 h1{
 margin-top:15px;
-font-size:35px;
+font-size:36px;
 }
 
 .subtitle{
 color:#00f2fe;
 margin-top:5px;
+font-size:18px;
 }
 
 .container{
@@ -48,10 +50,16 @@ margin:auto;
 padding:20px;
 }
 
+.section-title{
+font-size:26px;
+margin-bottom:10px;
+color:#00f2fe;
+}
+
 .card{
 background:rgba(255,255,255,0.08);
 padding:25px;
-margin:20px 0;
+margin:25px 0;
 border-radius:15px;
 transition:0.3s;
 }
@@ -67,9 +75,15 @@ background:#00f2fe;
 color:black;
 padding:7px 14px;
 border-radius:20px;
-margin:5px;
+margin:6px;
 font-size:14px;
 font-weight:bold;
+}
+
+.project{
+margin-top:10px;
+padding:10px;
+border-left:4px solid #00f2fe;
 }
 
 input,textarea{
@@ -94,10 +108,16 @@ button:hover{
 background:#00c6d4;
 }
 
+.social a{
+color:#00f2fe;
+text-decoration:none;
+margin-right:15px;
+}
+
 footer{
 text-align:center;
-padding:15px;
-margin-top:30px;
+padding:20px;
+margin-top:40px;
 background:rgba(0,0,0,0.4);
 }
 
@@ -116,37 +136,84 @@ background:rgba(0,0,0,0.4);
 
 <p>Satara Polytechnic, Satara</p>
 
+<p>Phone: 8080787377</p>
+
 </header>
 
 
 <div class="container">
 
 <div class="card">
-<h2>About Me</h2>
+
+<h2 class="section-title">About Me</h2>
+
 <p>
-Hello 👋 I'm Aditya Bandagar, a passionate Computer Engineering student.
-I enjoy coding, building websites and learning new technologies.
-My goal is to become a professional software developer.
+Hello 👋 I'm Aditya Bandagar, a Computer Engineering student from Satara Polytechnic.
+I am passionate about coding, web development and learning new technologies.
+My dream is to become a professional software developer and build useful digital products.
 </p>
+
 </div>
 
 
+
 <div class="card">
-<h2>Skills</h2>
+
+<h2 class="section-title">Education</h2>
+
+<p><b>Diploma in Computer Engineering</b></p>
+<p>Satara Polytechnic Satara</p>
+<p>2024 - 2027</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2 class="section-title">Skills</h2>
 
 <div class="skills">
-<span>C</span>
+
+<span>C Programming</span>
 <span>C++</span>
 <span>HTML</span>
 <span>Java</span>
 <span>Web Design</span>
+<span>Basic Python</span>
+
 </div>
 
 </div>
+
 
 
 <div class="card">
-<h2>Contact Me</h2>
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project">
+<b>Portfolio Website</b>
+<p>Personal website created using HTML and CSS.</p>
+</div>
+
+<div class="project">
+<b>YouTube UI Design</b>
+<p>Designed YouTube interface using Figma.</p>
+</div>
+
+<div class="project">
+<b>Simple Calculator</b>
+<p>Calculator project using C programming.</p>
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2 class="section-title">Contact Me</h2>
 
 <form action="https://formsubmit.co/adityabandagar7@gmail.com" method="POST">
 
@@ -164,11 +231,30 @@ My goal is to become a professional software developer.
 
 </div>
 
+
+
+<div class="card">
+
+<h2 class="section-title">Social Links</h2>
+
+<div class="social">
+
+<p>
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+</p>
+
+</div>
+
+</div>
+
+
 </div>
 
 <footer>
 
-<p>© 2026 Aditya Bandagar</p>
+<p>© 2026 Aditya Bandagar | Portfolio Website</p>
 
 </footer>
 
